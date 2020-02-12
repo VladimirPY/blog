@@ -10,4 +10,5 @@ class CategoryController extends Controller
         $categories = \App\Category::all();
         return view('views.layouts.categories', ['categories' => $categories]);
     }
+    
 }

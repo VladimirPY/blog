@@ -1,5 +1,57 @@
 [
     {
+        "name": "cmfcmf/openweathermap-php-api",
+        "version": "v2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cmfcmf/OpenWeatherMap-PHP-Api.git",
+            "reference": "37f2e1178948a07c8d50d5063a15ca84b5b51f6a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cmfcmf/OpenWeatherMap-PHP-Api/zipball/37f2e1178948a07c8d50d5063a15ca84b5b51f6a",
+            "reference": "37f2e1178948a07c8d50d5063a15ca84b5b51f6a",
+            "shasum": ""
+        },
+        "require": {
+            "ext-xml": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8 || ^5.0.5"
+        },
+        "time": "2018-08-30T07:35:48+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cmfcmf\\": "Cmfcmf"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Christian Flach (cmfcmf)",
+                "email": "cmfcmf.flach@gmail.com",
+                "homepage": "http://cmfcmf.github.io",
+                "role": "Developer"
+            }
+        ],
+        "description": "A php api to parse weather data from OpenWeatherMap.org. This api tries to normalise and abstract the data and remove inconsistencies.",
+        "homepage": "https://github.com/cmfcmf/OpenWeatherMap-PHP-Api",
+        "keywords": [
+            "OpenWeatherMap",
+            "api",
+            "free",
+            "owm",
+            "weather"
+        ]
+    },
+    {
         "name": "dnoegel/php-xdg-base-dir",
         "version": "v0.1.1",
         "version_normalized": "0.1.1.0",
@@ -504,6 +556,221 @@
             "faker",
             "fixtures"
         ]
+    },
+    {
+        "name": "gmopx/laravel-owm",
+        "version": "v0.1.3",
+        "version_normalized": "0.1.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/gitllermopalafox/Laravel-OWM.git",
+            "reference": "dae518c92d0c64218c696ec03778ef7ac831e61b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/gitllermopalafox/Laravel-OWM/zipball/dae518c92d0c64218c696ec03778ef7ac831e61b",
+            "reference": "dae518c92d0c64218c696ec03778ef7ac831e61b",
+            "shasum": ""
+        },
+        "require": {
+            "cmfcmf/openweathermap-php-api": "^2.1",
+            "php": ">=5.4.0"
+        },
+        "time": "2018-09-04T05:12:39+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Gmopx\\LaravelOWM\\LaravelOWMServiceProvider"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Gmopx\\LaravelOWM\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Guillermo Palafox",
+                "email": "palafox.87@gmail.com"
+            }
+        ],
+        "description": "Wrapper for cmfcmf/openweathermap-php-api",
+        "keywords": [
+            "clima",
+            "laravel",
+            "open weather map",
+            "weather"
+        ],
+        "abandoned": true
+    },
+    {
+        "name": "guzzlehttp/guzzle",
+        "version": "5.3.4",
+        "version_normalized": "5.3.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "b87eda7a7162f95574032da17e9323c9899cb6b2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b87eda7a7162f95574032da17e9323c9899cb6b2",
+            "reference": "b87eda7a7162f95574032da17e9323c9899cb6b2",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/ringphp": "^1.1",
+            "php": ">=5.4.0",
+            "react/promise": "^2.2"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "^4.0"
+        },
+        "time": "2019-10-30T09:32:00+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "guzzlehttp/ringphp",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/RingPHP.git",
+            "reference": "5e2a174052995663dd68e6b5ad838afd47dd615b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/RingPHP/zipball/5e2a174052995663dd68e6b5ad838afd47dd615b",
+            "reference": "5e2a174052995663dd68e6b5ad838afd47dd615b",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/streams": "~3.0",
+            "php": ">=5.4.0",
+            "react/promise": "~2.0"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "~4.0"
+        },
+        "suggest": {
+            "ext-curl": "Guzzle will use specific adapters if cURL is present"
+        },
+        "time": "2018-07-31T13:22:33+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Ring\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
+        "abandoned": true
+    },
+    {
+        "name": "guzzlehttp/streams",
+        "version": "3.0.0",
+        "version_normalized": "3.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/streams.git",
+            "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/streams/zipball/47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
+            "reference": "47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2014-10-12T19:18:40+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Stream\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Provides a simple abstraction over streams of data",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "Guzzle",
+            "stream"
+        ],
+        "abandoned": true
     },
     {
         "name": "hamcrest/hamcrest-php",
@@ -1173,7 +1440,8 @@
         "keywords": [
             "cron",
             "schedule"
-        ]
+        ],
+        "abandoned": "dragonmantank/cron-expression"
     },
     {
         "name": "myclabs/deep-copy",
@@ -1340,6 +1608,103 @@
         "keywords": [
             "parser",
             "php"
+        ]
+    },
+    {
+        "name": "nwidart/forecast-php",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nWidart/forecast-php.git",
+            "reference": "4f00a83c922877288a66ea766e49e2396f30f808"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nWidart/forecast-php/zipball/4f00a83c922877288a66ea766e49e2396f30f808",
+            "reference": "4f00a83c922877288a66ea766e49e2396f30f808",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "~5.2",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.7",
+            "scrutinizer/ocular": "~1.1"
+        },
+        "time": "2015-08-02T14:20:29+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Nwidart\\ForecastPhp\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Widart",
+                "email": "n.widart@gmail.com",
+                "homepage": "http://www.nicolaswidart.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP client package for the Forecast.io service",
+        "homepage": "https://github.com/nWidart/forecast-php",
+        "keywords": [
+            "forecast",
+            "forecast.io",
+            "php",
+            "weather"
+        ]
+    },
+    {
+        "name": "nwidart/laravel-forecast",
+        "version": "2.1",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nWidart/Laravel-forecast.git",
+            "reference": "c91ad5ac01b1285606173e3484c85b43fb8931ec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nWidart/Laravel-forecast/zipball/c91ad5ac01b1285606173e3484c85b43fb8931ec",
+            "reference": "c91ad5ac01b1285606173e3484c85b43fb8931ec",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.1",
+            "nwidart/forecast-php": "~1.0",
+            "php": ">=5.5.0"
+        },
+        "time": "2015-08-02T14:53:40+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Nwidart\\LaravelForecast\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Widart",
+                "email": "n.widart@gmail.com"
+            }
+        ],
+        "description": "Laravel-forecast provides a service provider and a facade around the Forecast-php wrapper",
+        "keywords": [
+            "forecast",
+            "laravel",
+            "weather"
         ]
     },
     {
@@ -2329,6 +2694,54 @@
             "guid",
             "identifier",
             "uuid"
+        ]
+    },
+    {
+        "name": "react/promise",
+        "version": "v2.7.1",
+        "version_normalized": "2.7.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/reactphp/promise.git",
+            "reference": "31ffa96f8d2ed0341a57848cbb84d88b89dd664d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/reactphp/promise/zipball/31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
+            "reference": "31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8"
+        },
+        "time": "2019-01-07T21:25:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "React\\Promise\\": "src/"
+            },
+            "files": [
+                "src/functions_include.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jan Sorgalla",
+                "email": "jsorgalla@gmail.com"
+            }
+        ],
+        "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+        "keywords": [
+            "promise",
+            "promises"
         ]
     },
     {

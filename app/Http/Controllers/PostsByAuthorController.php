@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Author, App\Post;
 use Illuminate\Http\Request;
 
 class PostsByAuthorController extends Controller
@@ -10,7 +11,8 @@ class PostsByAuthorController extends Controller
     {
 
         $author = Author::where('key', '=', $key)->first();
-        return view('posts_by_author', ['author' => $author]);
+        $posts = Post::where( 'author_id', '=', $author->id );
+        return view('posts_by_author', ['posts' => $posts->paginate(10)]);
 
     }
 }

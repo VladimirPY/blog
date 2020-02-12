@@ -1,91 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends ('layout')
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Blog Home - Start Bootstrap Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Custom styles for this template -->
-    <link href="./css/blog-home.css" rel="stylesheet">
+        @section('title', 'Блог - Главная')
+        @section('content')
+            <div class="col-md-8">
+                <h1 class="my-4" style="color:#C71585">Добро пожаловать<br>
+                    <small>Пожалуй, самый лучший в мире блог</small>
+                </h1>
 
 
-  </head>
+                @foreach( $posts as $post)
+                    <div class="card mb-4">
+                        <img class="card-img-top" src="{{$post->img}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h2 class="card-title" style="color:#008000">{{$post->title}}</h2>
+                            <p class="card-text">{{mb_substr($post->body,0 , 200)}} ...</p>
+                            <a href="{{route('single_post', $post->id)}}" class="btn btn-primary">Читать дальше &rarr;</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Создан: {{$post->created_at}} <br>
+                            Автор: <a href="{{route('posts_by_author', $post->author->key)}}">{{$post->author->name}}</a>
+                            Категории:
+                            @foreach($post->category as $category)
 
-  <body>
-
-  @include('layouts.header')
-
-    <!-- Page Content -->
-    <div class="container">
-
-      <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
-
-          <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
-          </h1>
-          @foreach ($posts as $post)
-
-                <!-- Blog Post -->
-                <div class="card mb-4">
-                    <img class="card-img-top" src="{{$post->img}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class="card-title">{{$post->title}}</h2>
-                        <p class="card-text">{{$post->body}}</p>
-                        <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                                <a href="{{route('posts_by_category', $category->key)}}">{{$category->categories}}   </a>
+                            @endforeach
+                        </div>
                     </div>
-                    <div class="card-footer text-muted">
-                        Опубликован: {{$post->created_at}} <br>
-                        
-                        Категории:
+                @endforeach
 
+                <ul class="pagination justify-content-center mb-4">
+                    @if ($posts->currentPage()!=1)
+                        <li class="page-item"><a class="page-link" href="?page=1"> Первая страница </a></li>
+                        <li class="page-item"><a class="page-link" href="{{$posts->previousPageUrl()}}"> < </a></li>
+                    @endif
+                    @if ($posts->count ()>0)
+                        @for ($count=1; $count<=$posts->lastPage(); $count++)
+                            @if($count>$posts->currentPage()-3 and $count<$posts->currentPage()+3)
+                                <li class="page-item @if ($count==$posts->currentPage()) active @endif">
+                                    <a class="page-link" href="?page={{$count}}"> {{$count}} </a></li>
+                            @endif
+                        @endfor
+                    @else
+                        <h1><font size="15" color="aqua" face="Arial"> Мы работаем над тем, чтобы здесь что-то появилось
+                                ;) </font></h1>
+                    @endif
+                    @if ($posts->currentPage() != $posts->lastPage())
+                        <li class="page-item"><a class="page-link" href="{{$posts->nextPageUrl()}}"> > </a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{$posts->lastPage()}}"> Последняя страница </a>
+                        </li>
+                    @endif
+                </ul>
+            </div>
+    @endsection
+
+    @section ('categories')
+        <!-- Categories Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Категории:</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled mb-0">
+                                @inject('categories', 'App\Categories_for_sidebar')
+                                <div>
+                                    {{ $categories->show_category() }}<br>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-          @endforeach
+            </div>
+    @endsection
 
-          <!-- Pagination -->
-          <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-              <a class="page-link" href="#">&larr; Older</a>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#">Newer &rarr;</a>
-            </li>
-          </ul>
 
+    @section ('search')
+        <!-- Search Widget -->
+    <div class="card my-4">
+        <h5 class="card-header">Курсы валют</h5>
+        <div class="card-body">
+            @inject('currency', 'App\Get_currency')
+            {{ $currency->show_currency() }}<br>
         </div>
-        <div class="col-md-4">
-            @include('layouts.search')
-
-            @include('layouts.categories')
-
-            @include('layouts.side')`
-        </div>
-
-        </div>
-
-      </div>
-      <!-- /.row -->
-
     </div>
-    <!-- /.container -->
+    @endsection
 
-    @include('layouts.footer')
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  </body>
-
-</html>
+            @section ('advertising')
+                <!-- Advertising Widget -->
+                    <div class="card my-4">
+                        <h5 class="card-header">Рекламный блок</h5>
+                        <div class="card-body">
+                            <strong style="color:#ff0000"> Покупайте наших слонов </strong>
+                        </div>
+                    </div>
+@endsection

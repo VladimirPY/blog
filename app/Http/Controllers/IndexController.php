@@ -8,8 +8,6 @@ class IndexController extends Controller
 {
     public function Main()
     {
-        return view('index',['posts'=>\App\Post::all()]);
+        return view('index', ['posts'=>\App\Post::paginate(10)]);
     }
-
-
 }

@@ -9,4 +9,5 @@ class PostController extends Controller
     public function __invoke(){
         return view('index', ['posts' => \App\Post::paginate (10)]);
     }
+
 }
