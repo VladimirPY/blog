@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request, \App\Post, \App\Author;
+use Illuminate\Support\Facades\DB;
 
 class Admin_postController extends Controller
 {
@@ -69,7 +70,7 @@ class Admin_postController extends Controller
             $author->save();
             $id = $author->id;
 
-            $post = Post::find(1)->where('id', '=', $id)->first();
+            $post = Post::where('id', '=', $id)->first();
             $post->author_id = $id;
             $post->title = $request->input('title');
             $post->body = $request->input('body');
@@ -88,13 +89,9 @@ class Admin_postController extends Controller
 
     public function delete(Request $request)
     {
-        if ($request->method() == 'DELETE') {
+            $category_post = DB::table('category_post')->where('post_id','=',$request->input('id'))->delete();
             $post = Post::find($request->input('id'));
             $post->delete();
             return back();
-        } else {
-            return view('admin.delete_post', ['posts' => \App\Post::all()]);
-        }
     }
-
 }

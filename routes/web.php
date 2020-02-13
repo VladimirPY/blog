@@ -42,7 +42,7 @@ Route::get('/admin/edit_post/{id}', 'Admin_postController@edit')->name('edit_pos
 
 Route::post('/admin/edit_post/{id}', 'Admin_postController@edit_save')->name('edit_post_post');
 
-Route::get('/admin/delete_post', 'Admin_postController@delete')->name('delete_post');
+Route::post('/admin/delete_post', 'Admin_postController@delete')->name('delete_post');
 
 Route::get('/admin/posts', 'AdminAllController@posts')->name('admin_posts');
 

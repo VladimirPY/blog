@@ -49,12 +49,12 @@
 
 
 
-    @section ('advertising')
-        <!-- Advertising Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Рекламный блок</h5>
-                <div class="card-body">
-                    <strong style="color:#ff0000"> Покупайте наших слонов </strong>
-                </div>
-            </div>
+@section ('advertising')
+                <!-- Advertising Widget -->
+                    <div class="card my-4">
+                        <h5 class="card-header">Рекламный блок</h5>
+                        <div class="card-body">
+                            <img src="https://b1.vestifinance.ru/c/356760.742xp.jpg" alt="реклама">
+                        </div>
+                    </div>
 @endsection

@@ -13,7 +13,7 @@ class Get_currency
             if ($curr['ccy'] == 'BTC'){
                 continue;
             }
-            echo '<p>' . $curr['ccy'] . '-' . $curr['buy'] . '</p>';
+            echo '<p>' . $curr['ccy'] . '-' . round( $curr['buy'], 2 ) . ' ₴</p>';
         }
     }
     public function show_weather()

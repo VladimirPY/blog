@@ -15,6 +15,6 @@ class AdminAllController extends Controller
         return view('admin.admin_category', ['categories' => Category::all()]);
     }
     public function posts(){
-        return view('admin.admin_posts', ['posts' => Post::all()]);
+        return view('admin.admin_posts', ['posts' => Post::paginate(10)]);
     }
 }

@@ -12,7 +12,7 @@ class PostsByAuthorController extends Controller
 
         $author = Author::where('key', '=', $key)->first();
         $posts = Post::where( 'author_id', '=', $author->id );
-        return view('posts_by_author', ['posts' => $posts->paginate(10)]);
+        return view('posts_by_author', ['posts' => $posts->paginate(10), 'author' => $author]);
 
     }
 }

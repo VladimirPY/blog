@@ -7,7 +7,6 @@
                     <small>Пожалуй, самый лучший в мире блог</small>
                 </h1>
 
-
                 @foreach( $posts as $post)
                     <div class="card mb-4">
                         <img class="card-img-top" src="{{$post->img}}" alt="Card image cap">
@@ -41,8 +40,7 @@
                             @endif
                         @endfor
                     @else
-                        <h1><font size="15" color="aqua" face="Arial"> Мы работаем над тем, чтобы здесь что-то появилось
-                                ;) </font></h1>
+                        <h1><font size="15" color="darkgray" face="Arial"> Нет постов... </font></h1>
                     @endif
                     @if ($posts->currentPage() != $posts->lastPage())
                         <li class="page-item"><a class="page-link" href="{{$posts->nextPageUrl()}}"> > </a></li>
@@ -89,7 +87,7 @@
                     <div class="card my-4">
                         <h5 class="card-header">Рекламный блок</h5>
                         <div class="card-body">
-                            <strong style="color:#ff0000"> Покупайте наших слонов </strong>
+                            <img src="https://b1.vestifinance.ru/c/356760.742xp.jpg" alt="реклама">
                         </div>
                     </div>
 @endsection

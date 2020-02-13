@@ -3,9 +3,9 @@
         @section('title', 'Блог - Главная')
         @section('content')
             <div class="col-md-8">
-                <h1 class="my-4" style="color:#C71585">Добро пожаловать<br>
-                    <small>Пожалуй, самый лучший в мире блог</small>
-                </h1>
+            <h1 class="my-4">
+                    <small>Посты категории {{ $category->key }}</small>
+            </h1>
 
 {{--                @include ('load')--}}
 
@@ -84,13 +84,12 @@
         </div>
     </div>
     @endsection
-
-            @section ('advertising')
-                <!-- Advertising Widget -->
-                    <div class="card my-4">
-                        <h5 class="card-header">Рекламный блок</h5>
-                        <div class="card-body">
-                            <strong style="color:#ff0000"> Покупайте наших слонов </strong>
-                        </div>
-                    </div>
+@section ('advertising')
+    <!-- Advertising Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">Рекламный блок</h5>
+            <div class="card-body">
+                <img src="https://b1.vestifinance.ru/c/356760.742xp.jpg" alt="реклама">
+            </div>
+        </div>
 @endsection

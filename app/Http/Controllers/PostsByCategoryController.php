@@ -12,7 +12,10 @@ class PostsByCategoryController extends Controller
     {
 
         $posts = Category::where('key', '=', $key)->first()->post();
-        return view('posts_by_category', ['posts' => $posts->paginate(10)]);
+        return view('posts_by_category', ['posts' => $posts->paginate(10),
+        'category' => Category::where('key', '=', $key)->first()
+        ]
+    );
 
     }
 }
