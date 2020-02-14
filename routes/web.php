@@ -47,3 +47,9 @@ Route::post('/admin/delete_post', 'Admin_postController@delete')->name('delete_p
 Route::get('/admin/posts', 'AdminAllController@posts')->name('admin_posts');
 
 Route::get('/post/{id}', '\\' . \App\Http\Controllers\SinglePostController::class)->name('single_post');
+
+Route::post('/admin/delete_category', 'Admin_categoryController@delete')->name('delete_category');
+
+Route::post('/admin/add_category', 'Admin_categoryController@add')->name('add_category');
+
+Route::post('/admin/save_categories', 'Admin_categoryController@save')->name('save_categories');

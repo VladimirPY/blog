@@ -7,13 +7,13 @@
         <ul class="pagination justify-content-center mb-4">
             <li class="page-item"><a class="page-link" href="{{route('admin_posts')}}"> Редактировать посты </a></li>
         </ul>
-        <form >
+        <form  action = "{{ route( 'add_category' ) }}" method = "post">
             <input type="text" name="key" > Ключ
-            <input type="text" name="caterories" > Название
+            <input type="text" name="categories" > Название
             <input type="submit" value="Добавить">
+            {{ csrf_field() }}
         </form>
         <hr>
-        <form >
             <table bordercolor="blue" >
                 <tr>
                     <th>Id</th>
@@ -21,15 +21,26 @@
                     <th>Название</th>
                     <th></th>
                 </tr>
-                @foreach($categories as $caregory)
+                @foreach($categories as $category)
                     <tr>
-                        <td>{{$caregory->id}} </td>
-                        <td><input type="text" value="{{$caregory->key}}"></td>
-                        <td><input type="text" value="{{$caregory->categories}}"></td>
-                        <td><input type="button" value="Delete"></td>
+                    <form action = "{{ route( 'save_categories' ) }}" method = "post">
+                        <td>{{$category->id}}</td>
+                        <td><input name = "key" type="text" value="{{$category->key}}"></td>
+                        <input name = "id" type="hidden" value="{{$category->id}}">
+                        <td><input name = "categories" type="text" value="{{$category->categories}}"></td>
+                        <td><input type="submit" value="Save"></td>
+                        {{ csrf_field() }}
+                    </form>
+                    <form action = "{{ route( 'delete_category' ) }}" method = "post">
+                        <td>
+
+                                <input type="submit" value="Delete">
+                                <input name = "id" type="hidden" value="{{ $category->id }}">
+                                {{ csrf_field() }}
+
+                        </td>
+                    </form>
                     </tr>
                 @endforeach
             </table>
-            <input type="submit" value="Save all">
-        </form>
     @endif

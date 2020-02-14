@@ -7,13 +7,11 @@
             <small>Пожалуй, самый лучший в мире блог</small>
         </h1>
 
-        
-
         <div class="card mb-4">
                 <img class="card-img-top" src="{{$post->img}}" alt="Card image cap">
                 <div class="card-body">
                     <h2 class="card-title" style="color:#008000">{{$post->title}}</h2>
-                    <p class="card-text">{{$post->body}} ...</p>
+                    <p class="card-text">{{$post->body}}</p>
                 </div>
                 <div class="card-footer text-muted">
                     Создан: {{$post->created_at}} <br>
