@@ -19,6 +19,7 @@
                     <th>Id</th>
                     <th>Ключ</th>
                     <th>Название</th>
+                    <th>Actions</th>
                     <th></th>
                 </tr>
                 @foreach($categories as $category)

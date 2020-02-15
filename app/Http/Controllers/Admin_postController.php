@@ -38,7 +38,7 @@ class Admin_postController extends Controller
             if ($image) {
                 $imageName = $image->getClientOriginalName();
                 $image->move('images', $imageName);
-                $post->img = 'http://blog/public/images/' . $imageName;
+                $post->img = 'http://public/images/' . $imageName;
             }
             $post->save();
 

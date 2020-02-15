@@ -39,3 +39,47 @@ footer{
 .info > h1{
   text-align: center;
 }
+.admin{
+  width:100%;
+  height: calc( 100vh - 176px );
+}
+.admin ul{
+  margin-top: 200px;
+}
+.container .row{
+  min-height: calc( 100vh - 176px );
+}
+
+.newPost{
+  width:100%;
+  transition: .3s;
+  color: green;
+  text-decoration: none;
+}
+a.newPost :hover{
+  display: none;
+}
+
+.category{
+  width:100%;
+}
+.category li{
+  text-align:center;
+  width:100%;
+}
+.logo{
+  max-width:170px;
+  max-height: 45px;
+}
+
+.form_editAdd{
+  margin:100px auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 450px;
+  border: solid 1px black;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px 15px #FFB6C1;
+}

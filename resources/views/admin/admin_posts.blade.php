@@ -1,9 +1,9 @@
 @extends( 'layout' )
 @section('content')
-<ul class="pagination justify-content-center mb-4">
+<ul class="pagination justify-content-center mb-4 category">
             <li class="page-item"><a class="page-link" href="{{route('admin_category')}}"> Редактировать категории </a></li>
-        </ul>
-        <a href="{{ route( 'add_post_get' ) }}" class="list-group-item ">
+</ul><br/>
+        <a class = "newPost" href="{{ route( 'add_post_get' ) }}" class="list-group-item ">
             <span class="glyphicon glyphicon-star"></span> Create New Post <span class="badge">
                 <img style = "max-width:30px;max-height:30px" src="../images/add.svg" alt=" ">
             </span>
