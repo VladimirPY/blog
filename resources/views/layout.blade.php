@@ -24,7 +24,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" style="color:#00FFFF" href="{{route('index')}}">Blog Edinorog</a>
+        <a class="navbar-brand" style="color:#00FFFF" href="{{route('index')}}"><img class = "logo" src = "/images/logo.png" />Blog<span style = "color:pink">Edinorog</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@
                 @endif
                 <li class="nav-item">
                 @if (\Auth::check ())
-                    <a class="nav-link" style="color:#FFB6C1"
+                    <a title = "logOut" class="nav-link" style="color:#FFB6C1"
                        href="{{route('logout')}}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
