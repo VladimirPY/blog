@@ -38,7 +38,7 @@ class Admin_postController extends Controller
             if ($image) {
                 $imageName = $image->getClientOriginalName();
                 $image->move('images', $imageName);
-                $post->img = 'http://public/images/' . $imageName;
+                $post->img = 'http://blog/images/' . $imageName;
             }
             $post->save();
 
@@ -58,20 +58,12 @@ class Admin_postController extends Controller
         if ($request->method() == 'POST') {
 
             $this->validate($request, [
-                'author_name' => 'required|max:100',
                 'title' => 'required|max:255|unique:posts,title',
                 'body' => 'required|min:10',
                 'image' => 'image|mimes:jpeg,jpg,png',
             ]);
 
-            $author = new Author();
-            $author->key = $request->input('author_name');
-            $author->name = $request->input('author_name');
-            $author->save();
-            $id = $author->id;
-
             $post = Post::where('id', '=', $id)->first();
-            $post->author_id = $id;
             $post->title = $request->input('title');
             $post->body = $request->input('body');
 
@@ -79,7 +71,7 @@ class Admin_postController extends Controller
             if ($image) {
                 $imageName = $image->getClientOriginalName();
                 $image->move('images', $imageName);
-                $post->img = 'http://web27/images/' . $imageName;
+                $post->img = 'http://blog/images/' . $imageName;
             }
             $post->save();
 

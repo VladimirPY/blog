@@ -4,29 +4,30 @@
         @section('content')
 
         <div class = "info">
-        <h1>Contacs</h1><br/>
-                <p>Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Aliquid illum voluptatum earum consequuntur, 
-                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste 
+        <h1 style = "margin:50px">Contacs</h1><br/>
+                <p>Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Aliquid illum voluptatum earum consequuntur,
+                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste
                 perspiciatis nihil nemo, aliquam incidunt eum ipsa.
-                Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Aliquid illum voluptatum earum consequuntur, 
-                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste 
+                Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Aliquid illum voluptatum earum consequuntur,
+                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste
                 perspiciatis nihil nemo, aliquam incidunt eum ipsa.
-                Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Aliquid illum voluptatum earum consequuntur, 
-                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste 
+                Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Aliquid illum voluptatum earum consequuntur,
+                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste
                 perspiciatis nihil nemo, aliquam incidunt eum ipsa.
-                Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Aliquid illum voluptatum earum consequuntur, 
-                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste 
+                Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Aliquid illum voluptatum earum consequuntur,
+                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste
                 perspiciatis nihil nemo, aliquam incidunt eum ipsa.
-                Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Aliquid illum voluptatum earum consequuntur, 
-                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste 
+                Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Aliquid illum voluptatum earum consequuntur,
+                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste
                 perspiciatis nihil nemo, aliquam incidunt eum ipsa.
-                Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elit. Aliquid illum voluptatum earum consequuntur, 
-                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste 
+                Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Aliquid illum voluptatum earum consequuntur,
+                culpa dolorem! Temporibus deleniti vel illum dolorem ex earum iste
                 perspiciatis nihil nemo, aliquam incidunt eum ipsa.</p>
         </div>
+@endsection
