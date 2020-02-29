@@ -56,11 +56,11 @@
 
     @section ('categories')
         <!-- Categories Widget -->
-            <div class="card my-4">
+            <div class="card my-4 ctg">
                 <h5 class="card-header">Категории:</h5>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-15">
                             <ul class="list-unstyled mb-0">
                                 @inject('categories', 'App\Categories_for_sidebar')
                                 <div>

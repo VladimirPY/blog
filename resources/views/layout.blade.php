@@ -16,7 +16,9 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/blog-home.css" rel="stylesheet">
-
+    <style>
+        {{ URL::asset('css/blog-home.css') }}
+    </style>
 </head>
 
 <body>

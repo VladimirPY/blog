@@ -53,3 +53,5 @@ Route::post('/admin/delete_category', 'Admin_categoryController@delete')->name('
 Route::post('/admin/add_category', 'Admin_categoryController@add')->name('add_category');
 
 Route::post('/admin/save_categories', 'Admin_categoryController@save')->name('save_categories');
+
+Route::post('/add_comment', 'SinglePostController@add_comment')->name('add_comment');

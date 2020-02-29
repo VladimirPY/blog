@@ -53,11 +53,11 @@
 
     @section ('categories')
         <!-- Categories Widget -->
-            <div class="card my-4">
+            <div class="card my-4 ctg">
                 <h5 class="card-header">Категории:</h5>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-15">
                             <ul class="list-unstyled mb-0">
                                 @inject('categories', 'App\Categories_for_sidebar')
                                 <div>
@@ -74,10 +74,19 @@
     @section ('search')
         <!-- Search Widget -->
     <div class="card my-4">
-        <h5 class="card-header">Курсы валют</h5>
-        <div class="card-body">
+        <h5 class="card-header">Курс валют / Погода</h5>
+        <div class="card-body currency">
             @inject('currency', 'App\Get_currency')
-            {{ $currency->show_currency() }}<br>
+            <div>
+                {{ $currency->show_currency() }}
+            </div>
+            <div>
+                <?php
+                    $weather = $currency->get_weather()
+                ?>
+                <img style = "max-width:50px;max-height:50px;" src = "/images/{{ $weather['currently']['icon'] }}.png" alt =""/>
+                <p>{{ round( ( $weather['currently']['temperature'] - 32 ) * 5/9, 2 )  }} C° / {{ $weather['currently']['temperature'] }} F°</p>
+            </div>
         </div>
     </div>
     @endsection

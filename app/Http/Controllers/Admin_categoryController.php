@@ -10,10 +10,13 @@ class Admin_categoryController extends Controller
 {
     public function add(Request $request)
     {
-        $category = new Category();
-        $category->key = $request->input('key');
-        $category->categories = $request->input('categories');
-        $category->save();
+        if(  $request->input('key') !== NULL
+            &&  $request->input('categories') !== NULL ) {
+            $category = new Category();
+            $category->key = $request->input('key');
+            $category->categories = $request->input('categories');
+            $category->save();
+        }
         return back();
     }
 

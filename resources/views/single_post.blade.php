@@ -8,31 +8,55 @@
         </h1>
 
         <div class="card mb-4">
-                <img class="card-img-top" src="{{$post->img}}" alt="Card image cap">
+            <img class="card-img-top" src="{{$post->img}}" alt="Card image cap">
+            <div class="card-body">
+                <h2 class="card-title" style="color:#008000">{{$post->title}}</h2>
+                <p class="card-text">{{$post->body}}</p>
+            </div>
+            <div class="card-footer text-muted">
+                Создан: {{$post->created_at}} <br>
+                Автор: <a href="{{route('posts_by_author', $post->author->key)}}">{{$post->author->name}}</a>
+                Категории:
+                @foreach($post->category as $category)
+
+                    <a href="{{route('posts_by_category', $category->key)}}">{{$category->categories}}   </a>
+                @endforeach
+            </div>
+        </div>
+        <div>
+        <h4>Коментарии:</h4>
+        @if (\Auth::check ())
+            <form class = "comment" action="{{ route( 'add_comment' ) }}" method="post">
+                {{ csrf_field() }}
+                <textarea name="text" placeholder = "New comment..."></textarea>
+                <input type = "hidden"  name = "user_id" value = " {{ \Auth::user()->id }}">
+                <input type = "hidden" name = "post_id" value = " {{ $post->id }}">
+                <img src="http://blog/images/rocket.png" alt="">
+                <input type = "submit"  value = "Полетели">
+            </form>
+        @endif
+
+           @foreach( $post->comment as $comment )
+            <div class="card mb-4">
                 <div class="card-body">
-                    <h2 class="card-title" style="color:#008000">{{$post->title}}</h2>
-                    <p class="card-text">{{$post->body}}</p>
+                    {{ $comment->text }}
                 </div>
                 <div class="card-footer text-muted">
-                    Создан: {{$post->created_at}} <br>
-                    Автор: <a href="{{route('posts_by_author', $post->author->key)}}">{{$post->author->name}}</a>
-                    Категории:
-                    @foreach($post->category as $category)
-
-                        <a href="{{route('posts_by_category', $category->key)}}">{{$category->categories}}   </a>
-                    @endforeach
+                {{ $comment->user->name }}
                 </div>
             </div>
+           @endforeach
+        </div>
     </div>
 @endsection
 
 @section ('categories')
     <!-- Categories Widget -->
-    <div class="card my-4">
+    <div class="card my-4 ctg">
         <h5 class="card-header">Категории:</h5>
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-15">
                     <ul class="list-unstyled mb-0">
                         @inject('categories', 'App\Categories_for_sidebar')
                         <div>

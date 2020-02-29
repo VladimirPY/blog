@@ -3,6 +3,7 @@
 
 namespace App;
 use DateTime, DateTimezone;
+use \Nwidart\ForecastPhp\Forecast;
 
 class Get_currency
 {
@@ -16,15 +17,20 @@ class Get_currency
             echo '<p>' . $curr['ccy'] . '-' . round( $curr['buy'], 2 ) . ' ₴</p>';
         }
     }
-    public function show_weather()
+    public function get_weather()
     {
         $date = new DateTimezone("Europe/Kiev");
         $location = $date->getLocation();
         $lat = $location[ "latitude" ];
         $long = $location[ "longitude" ];
-        $request = "'https://api.gismeteo.net/v2/weather/current/?latitude=$lat&longitude=$long'";
-        $data = @file_get_contents($request);
-        return json_decode( $data );
 
+        // $ip = $_SERVER['REMOTE_ADDR'];
+        // $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+        // echo $details; // -> "Mountain View"
+
+        $fc = new Forecast("e90cd36771311d3af40956e8e93751d5");
+        $info =  $fc -> get("46.5" ,"30.7") ;
+
+        return $info ;
     }
 }
